@@ -40,6 +40,8 @@ const displayDirections = new google.maps.DirectionsRenderer();
 
 displayDirections.setMap(map);
 
+let distance, price;
+
 function calcRoute() {
 
     const request = {
@@ -64,14 +66,15 @@ function calcRoute() {
                 }
             }
 
-            const distance = Math.floor(Number(distN) * 1.6);
+            distance = Math.floor(Number(distN) * 1.6);
             const travelTime = result.routes[0].legs[0].duration.text;
-            const price = Math.floor(5 * distance);
+            price = Math.floor(5 * distance);
             output.innerHTML = `<ul>
                         <li><span>Distance: </span>${distance} Km</li>
                         <li><span>Time: </span>${travelTime}</li>
                         <li><span>Price: ${price} Meticais</span></li>
-                        <li><button class="call-btn" onclick="callDelivery()">Call Delivery</button></li>
+                        <li><a href="" onclick="callDelivery(this)"><button class="call-btn" type="button">Call Delivery
+                        </button></a></li>
             </ul>`;
 
             displayDirections.setDirections(result);
@@ -84,10 +87,12 @@ function calcRoute() {
     });
 }
 
-function callDelivery() {
-    const response = confirm('Calling delivery');
-    if(response) 
+function callDelivery(a) {
+     const response = confirm('Calling delivery');
+    if(response) {
         alert('Delivery guy arriving in 10 minutes');
-    else 
-        alert('Canceling delivery');
+        a.href = `https://wa.me/876494529?text=Delivery - from: ${document.getElementById("from").value} - to: ${document.getElementById("to").value} - price: ${price} meticais - distance: ${distance} km`;
+    } else {
+        alert('Delivery canceled');
+    }
 }
