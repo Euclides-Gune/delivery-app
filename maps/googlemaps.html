@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: #5bc0de;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .jumbotrun {
+            background-color: transparent;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .jumbotrun h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .jumbotrun h1, p {
+            text-align: center;
+        }      
+        
+        .jumbotrun p {
+            font-size: 1em;
+        }
+
+        .container {
+            padding: 50px 20px;
+            background-color: lightgray;
+        }
+
+        #googleMap {
+            width: 80%;
+            height: 400px;
+            margin: 20px auto;
+        }
+
+        .alert-info {
+            background-color: rgb(173, 215, 164);
+        }
+
+        .alert-danger {
+            background-color: rgb(255, 171, 171);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- AIzaSyBvZcvEzZkpIcQL7h9gZ2p0HROYcmmzJvw -->
+
+    <div class="jumbotrun">
+
+        <div class="container">
+            <h1>Find The Distance between two places</h1>
+            <p>This app will help you Calculate your travelling Distance</p>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="from">From: </label>
+                    <input type="text" name="" id="from" placeholder="Origin">
+                </div>
+
+                <div class="form-group">
+                    <label for="to">To: </label>
+                    <input type="text" name="" id="to" placeholder="Destination">
+                </div>
+            </form>
+            <div>
+                <button class="btn" onclick="calcRoute()">Click</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="googleMap">
+
+            </div>
+            <div id="output">
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZcvEzZkpIcQL7h9gZ2p0HROYcmmzJvw&libraries=places"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-25.9692,32.5732&radius=5000&type=supermarket&key=AIzaSyBvZcvEzZkpIcQL7h9gZ2p0HROYcmmzJvw"></script>
+
+    
+    <script src="./app.js"></script>
+    
+</body>
+</html>

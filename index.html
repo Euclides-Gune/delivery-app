@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery App</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+
+    <!-- AIzaSyBvZcvEzZkpIcQL7h9gZ2p0HROYcmmzJvw -->
+
+    <nav>
+        <img src="./assets/icons/traced-delivery-icon.png" alt="">
+
+        <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#form">Send a package</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+        </ul>
+
+        <button id="nav-btn">
+            <span class="material-symbols-outlined menu-btn">
+                menu
+                </span>
+        </button>
+    </nav>
+
+    <header id="home">
+        <div class="content">
+            <h1>Safe and fast delivery</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem velit vitae molestiae veniam rem in quo dolor deleniti consequatur illum cumque qui corporis fugit ab obcaecati quam doloribus, adipisci vero.</p>
+        <p class="header-p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, doloribus. Quasi tempora fugiat assumenda voluptatibus veritatis corrupti ullam, doloremque placeat aliquam dolorem a eum ut, illo odio! Perferendis, in veritatis!</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="features" class="features">
+            <div class="features-title">
+                <h1>Our <span>Features</span></h1>
+            </div>
+            <div class="features-cards">
+                <div class="features-card">
+                    <div class="image">
+                        <img src="./assets/images/traced-fast-delivery-feature.png" alt="">
+                    </div>
+                    <div class="feature-description">
+                        <h2>Fast Delivery</h2>
+                        <a href="#">
+                            <button>Read More</button>
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="features-card">
+                    <div class="image">
+                        <img src="./assets/images/time-feature.webp" alt="">
+                    </div>
+                    <div class="feature-description">
+                        <h2>Real-time Tracking</h2>
+                        <a href="#">
+                            <button>Read More</button>
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="features-card">
+                    <div class="image">
+                        <img src="./assets/images/paymeny-feature.png" alt="">
+                    </div>
+                    <div class="feature-description">
+                        <h2>Easy payment</h2>
+                        <a href="#">
+                            <button>Read More</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="map">
+
+            <div id="form">
+                <form id="send-form">
+                    <div>
+                        <label for="from"><span class="material-symbols-outlined">
+                            location_on
+                            </span></label>
+                            <input type="text"name="from" id="from">
+                            ->From
+                    </div>
+    
+                    <div>
+                        <label for="to"><span class="material-symbols-outlined">
+                            location_on
+                            </span>   </label>
+                            <input type="text" name="to" id="to">
+                            ->To
+                    </div>
+
+                    <button type="button" class="form-btn" onclick="calcRoute()">Send</button>
+                </form>
+            </div>
+
+            <div>
+                <div id="googleMap">
+
+                </div>
+
+                <div class="output">
+            
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer id="contacts">
+        <h1>Contacts</h1>
+        <ul>
+            <li><span class="material-symbols-outlined">
+                call
+                </span>84 111 1111</li>
+            <li><span class="material-symbols-outlined">
+                call
+                </span> 87 111 1111</li>
+            <li><span class="material-symbols-outlined">
+                call
+                </span> 82 111 1111</li>
+            <li><span class="material-symbols-outlined">
+                mail
+                </span> deliverymoz@gmail.com</li>
+        </ul>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZcvEzZkpIcQL7h9gZ2p0HROYcmmzJvw&libraries=places"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-25.9692,32.5732&radius=5000&type=supermarket&key=AIzaSyBvZcvEzZkpIcQL7h9gZ2p0HROYcmmzJvw"></script>
+
+    <script src="./index.js"></script>
+</body>
+</html>
