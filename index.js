@@ -91,7 +91,8 @@ function callDelivery(a) {
      const response = confirm('Calling delivery');
     if(response) {
         alert('Delivery guy arriving in 10 minutes');
-        a.href = `https://wa.me/258876494529?text=Delivery - from: ${document.getElementById("from").value} - to: ${document.getElementById("to").value} - price: ${price} meticais - distance: ${distance} km`;
+        const message = `*Delivery*\n-*from:* ${document.getElementById("from").value}\n -*to:* ${document.getElementById("to").value}\n -*price:* ${price} meticais\n -*distance:* ${distance} km`;
+        a.href = `https://wa.me/258876494529?text=${message}`;
     } else {
         alert('Delivery canceled');
     }
