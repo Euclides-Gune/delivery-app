@@ -41,13 +41,17 @@
     }
 
     footer {
-        padding-bottom: 100px;
+        padding: 50px 0px;
     }
 
     footer > ul {
         display: flex;
         flex-direction: column;
         text-align: center;
+    }
+
+    footer > ul > li {
+        margin-bottom: 10px;
     }
     
 }

@@ -138,6 +138,7 @@ header {
 }
 
 .features-card button:hover {
+    color: white;
     background-color: red;
     cursor: pointer;
 }
