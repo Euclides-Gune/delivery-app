@@ -73,7 +73,7 @@ function calcRoute() {
                         <li><span>Distance: </span>${distance} Km</li>
                         <li><span>Time: </span>${travelTime}</li>
                         <li><span>Price: ${price} Meticais</span></li>
-                        <li><a href="" onclick="callDelivery(this)"><button class="call-btn" type="button">Call Delivery
+                        <li><a href="" onclick="callDelivery(this)" target="_blank"><button class="call-btn" type="button">Call Delivery
                         </button></a></li>
             </ul>`;
 
@@ -92,7 +92,8 @@ function callDelivery(a) {
     if(response) {
         alert('Delivery guy arriving in 10 minutes');
 
-        const message = `*Delivery*%0A-*from:* ${document.getElementById("from").value}%0A -*to:* ${document.getElementById("to").value}%0A -*price:* ${price} meticais%0A -*distance:* ${distance} km`;
+        const message = `*Delivery*%0A*From:* ${document.getElementById("from").value}%0A*To:* ${document.getElementById("to").value}%0A*Price:* ${price} meticais%0A*Distance:* ${distance} km`;
+
         
         a.href = `https://wa.me/258876494529?text=${message}`;
     } else {
