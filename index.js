@@ -122,7 +122,7 @@ function verifyWeight() {
             calcRoute(40);
         } else if(weight > 10 && weight <= 20) {
             calcRoute(50);
-        } else {
+        } else if(weight > 20) {
             calcRoute(60);
         }
     } else {
