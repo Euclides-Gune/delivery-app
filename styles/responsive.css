@@ -40,6 +40,33 @@
         display: none;
     }
 
+    form {
+        padding: 0px;
+    }
+
+    form > div {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: justify;
+        box-sizing: border-box;
+    }
+
+    form > div > input {
+        border: 1px solid black;
+        width: 75%;
+        border-radius: none;
+        padding: 5px;
+        outline: none;
+    }
+
+    .form-btn {
+        border: none;
+        width: 100%;
+        padding: 10px;
+        font-weight:bolder;
+        color: white;
+    }
+
     footer {
         padding: 50px 0px;
     }

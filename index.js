@@ -41,6 +41,7 @@ const displayDirections = new google.maps.DirectionsRenderer();
 displayDirections.setMap(map);
 
 let distance, price;
+let distanceN = '';
 
 function calcRoute() {
 
@@ -53,6 +54,10 @@ function calcRoute() {
 
     directionsService.route(request, (result, status) => {
 
+        distance = '';
+        distanceN = '';
+        price = 0;
+
         const output = document.getElementsByClassName('output')[0];
 
         if(status == google.maps.DirectionsStatus.OK) {
@@ -61,16 +66,32 @@ function calcRoute() {
             let distN = '';
 
             for(let i = 0; i < dist.length; i++) {
-                if(dist[i] == '0' || dist[i] == '1' || dist[i] == '2' || dist[i] == '3' || dist[i] == '4' || dist[i] == '5' || dist[i] == '6' || dist[i] == '7' || dist[i] == '8' || dist[i] == '9') {
+                if(dist[i] == '0' || dist[i] == '1' || dist[i] == '2' || dist[i] == '3' || dist[i] == '4' || dist[i] == '5' || dist[i] == '6' || dist[i] == '7' || dist[i] == '8' || dist[i] == '9' || dist[i] == '.') {
                     distN += dist[i];
                 }
             }
 
-            distance = Math.floor(Number(distN) * 1.6);
+            distance = (Number(distN) * 1.6).toString();
+
+            console.log(distance);
+
+            for(i in distance) {
+                if(distance[i-1] == '.') {
+                distanceN += distance[i];
+                break;
+                } else {
+                distanceN += distance[i];
+                }
+            }
+
+            console.log(distanceN);
+
             const travelTime = result.routes[0].legs[0].duration.text;
-            price = Math.floor(5 * distance);
+
+            price = Math.floor(50 * Number(distanceN));
+            
             output.innerHTML = `<ul>
-                        <li><span>Distance: </span>${distance} Km</li>
+                        <li><span>Distance: </span>${distanceN} Km</li>
                         <li><span>Time: </span>${travelTime}</li>
                         <li><span>Price: ${price} Meticais</span></li>
                         <li><a href="" onclick="callDelivery(this)" target="_blank"><button class="call-btn" type="button">Call Delivery
@@ -91,8 +112,7 @@ function callDelivery(a) {
      const response = confirm('Calling delivery');
     if(response) {
         alert('Delivery guy arriving in 10 minutes');
-
-        const message = `*Delivery*%0A*From:* ${document.getElementById("from").value}%0A*To:* ${document.getElementById("to").value}%0A*Price:* ${price} meticais%0A*Distance:* ${distance} km`;
+        const message = `*Delivery*%0A*From:* ${document.getElementById("from").value}%0A*To:* ${document.getElementById("to").value}%0A*Price:* ${price} meticais%0A*Distance:* ${distanceN} km`;
 
         
         a.href = `https://wa.me/258876494529?text=${message}`;
