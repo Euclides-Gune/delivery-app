@@ -95,7 +95,7 @@ function calcRoute() {
 
             const travelTime = result.routes[0].legs[0].duration.text;
 
-            price = Math.floor(50 * Number(distance));
+            price = Math.floor(40 * Number(distance));
             
             output.innerHTML = `<ul>
                         <li><span>Distance: </span>${distance} Km</li>
