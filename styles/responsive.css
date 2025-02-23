@@ -57,6 +57,7 @@
         border-radius: none;
         padding: 5px;
         outline: none;
+        zoom: none;
     }
 
     .form-btn {
