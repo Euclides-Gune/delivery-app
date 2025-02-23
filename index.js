@@ -72,7 +72,7 @@ function round(str) {
 
 }
 
-function calcRoute() {
+function calcRoute(tax) {
 
     const request = {
         origin: document.getElementById("from").value,
@@ -95,7 +95,7 @@ function calcRoute() {
 
             const travelTime = result.routes[0].legs[0].duration.text;
 
-            price = Math.floor(40 * Number(distance));
+            price = Math.floor(tax * Number(distance));
             
             output.innerHTML = `<ul>
                         <li><span>Distance: </span>${distance} Km</li>
@@ -113,6 +113,15 @@ function calcRoute() {
             output.innerHTML = `<h1>There was an error defining the points or the distance cannot be calculated, try again</h1>`;
         }
     });
+}
+
+function verifyWeight() {
+    let weight = document.getElementById("weight").value;
+    if(weight <= 10) {
+        calcRoute(40);
+    } else {
+        calcRoute(60);
+    }
 }
 
 function callDelivery(a) {
