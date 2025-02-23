@@ -87,7 +87,7 @@
                         <label for="from"><span class="material-symbols-outlined">
                             location_on
                             </span></label>
-                            <input type="text"name="from" id="from" placeholder="from" >
+                            <input type="text"name="from" id="from" placeholder="from" required >
                             ->A
                     </div>
     
@@ -95,7 +95,7 @@
                         <label for="to"><span class="material-symbols-outlined">
                             location_on
                             </span>   </label>
-                            <input type="text" name="to" id="to" placeholder="to" >
+                            <input type="text" name="to" id="to" placeholder="to" required>
                             ->B
                     </div>
 
@@ -103,7 +103,7 @@
                         <label for="weight"> <span class="material-symbols-outlined">
                             weight
                             </span></label>
-                        <input type="number" name="weight" id="weight" placeholder="weight">->KG
+                        <input type="number" name="weight" id="weight" placeholder="weight" min="1" max="40" required>->KG
                     </div>
 
                     <button type="button" class="form-btn" onclick="verifyWeight()">Send</button>
