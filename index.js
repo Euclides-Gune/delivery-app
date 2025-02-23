@@ -117,10 +117,16 @@ function calcRoute(tax) {
 
 function verifyWeight() {
     let weight = document.getElementById("weight").value;
-    if(weight <= 10) {
-        calcRoute(40);
+    if(weight > 0 && weight <= 40) {
+        if(weight <= 10) {
+            calcRoute(40);
+        } else {
+            calcRoute(60);
+        }
     } else {
-        calcRoute(60);
+        const output = document.getElementsByClassName('output')[0];
+
+        output.innerHTML = `<h1>Weight must be greater than 0 and less than or equal to 40 kg</h1>`;
     }
 }
 
