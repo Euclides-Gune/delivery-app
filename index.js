@@ -120,6 +120,8 @@ function verifyWeight() {
     if(weight > 0 && weight <= 40) {
         if(weight <= 10) {
             calcRoute(40);
+        } else if(weight > 10 && weight <= 20) {
+            calcRoute(50);
         } else {
             calcRoute(60);
         }
