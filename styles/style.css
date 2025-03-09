@@ -171,6 +171,7 @@ form > div > input {
     border-radius: none;
     padding: 5px;
     outline: none;
+    font-size: 16px;
 }
 
 .form-btn {
