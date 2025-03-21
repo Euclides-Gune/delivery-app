@@ -144,3 +144,13 @@ function callDelivery(a) {
         alert('Delivery canceled');
     }
 }
+
+const formBtn = document.getElementsByClassName('form-btn')[0];
+
+console.log(formBtn);
+
+formBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    verifyWeight();
+});
